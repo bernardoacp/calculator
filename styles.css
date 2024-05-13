@@ -1,3 +1,5 @@
+@import url('https://fonts.cdnfonts.com/css/ds-digital');
+
 body {
     display: flex;
     direction: column;
@@ -23,6 +25,12 @@ body {
     margin-left: 9%;
     margin-right: 9%;
     border-radius: 30px;
+    padding-left: 5%;
+    font-family: 'DS-Digital', sans-serif;
+    font-size: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 .line {
@@ -38,6 +46,6 @@ button {
     width: 15%;
     padding-top: 3%;
     padding-bottom: 12%;
-    font-size: 50px;
+    font-size: 4vh;
     border-radius: 15px;
 }
