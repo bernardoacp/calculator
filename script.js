@@ -42,8 +42,6 @@ const displayResult = function() {
         else {
             displayValue1 = Math.round((displayValue1 + Number.EPSILON) * 100) / 100;
             display.textContent = displayValue1;
-            displayValue2 = "";
-            operation = "";
         }
         operation = "";
         displayValue2 = "";
@@ -83,12 +81,12 @@ for (let i = 0; i < operatorButtons.length; i++) {
     operatorButtons[i].addEventListener("click", (ev) => {
         if (first == true && input == true) {
             operation = ev.target.id;
-            first = false;
         }
         else if (first == false && input == true) {
             displayResult();
             operation = ev.target.id;
         }
+        first = false;
     });
 }
 
@@ -113,5 +111,10 @@ deleteButton.addEventListener("click", () => {
     else {
         displayValue2 = displayValue2.slice(0, -1);
         display.textContent = displayValue2;
+    }
+    
+    if (displayValue1 == "") {
+        first = true;
+        input = false;
     }
 });
