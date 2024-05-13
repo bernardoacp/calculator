@@ -17,8 +17,8 @@ const divide = function(a, b) {
 let firstNum, secondNum, operator;
 
 const operate = function(firstNum, operator, secondNum) {
-    firstNum = parseInt(firstNum);
-    secondNum = parseInt(secondNum);
+    firstNum = parseFloat(firstNum);
+    secondNum = parseFloat(secondNum);
     switch (operator) {
         case '+':
             return add(firstNum, secondNum);
@@ -40,8 +40,7 @@ const displayResult = function() {
             input = false;
         }
         else {
-            displayValue1 = Math.round((displayValue1 + Number.EPSILON) * 100) / 100;
-            display.textContent = displayValue1;
+            display.textContent = Math.round((displayValue1 + Number.EPSILON) * 10000000) / 10000000;;
         }
         operation = "";
         displayValue2 = "";
