@@ -31,23 +31,6 @@ const operate = function(firstNum, operator, secondNum) {
     }
 }
 
-const displayOperation = function(operateButtons) {
-    switch (operateButtons.id) {
-        case "add":
-            operation = "+"
-            break;
-        case "subtract":
-            operation = "-"
-            break;
-        case "multiply":
-            operation = "*";
-            break;
-        case "divide":
-            operation = "/";
-            break;
-    }
-}
-
 const displayResult = function() {
     if (displayValue1 != "" && displayValue2 != "" && operation != "") {
         displayValue1 = operate(parseInt(displayValue1), operation, parseInt(displayValue2));
@@ -87,11 +70,11 @@ let operatorButtons = document.querySelectorAll(".operation");
 for (let i = 0; i < operatorButtons.length; i++) {
     operatorButtons[i].addEventListener("click", (ev) => {
         if (first == true) {
-            displayOperation(ev.target);
+            operation = ev.target.id;
         }
         else {
             displayResult();
-            displayOperation(ev.target);
+            operation = ev.target.id;
         }
         first = false;
     });
