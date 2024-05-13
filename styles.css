@@ -15,14 +15,14 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    background-color: #d3d3d3;
+    background-color: #333333;
     padding-top: 10vh;
     outline: 2px solid black;
 }
 
 #display {
     height: 100%;
-    background-color: white;
+    background-color: #bccd95;
     margin-left: 9%;
     margin-right: 9%;
     border-radius: 30px;
@@ -45,6 +45,7 @@ body {
 }
 
 button {
+    background-color: #808080;
     position: relative;
     height: 0;
     width: 15%;
@@ -52,14 +53,6 @@ button {
     padding-bottom: 12%;
     font-size: 4vh;
     border-radius: 15px;
-}
-
-button:active, .button-active {
-    background: #e5e5e5;
-    -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
-    -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
-    box-shadow: inset 0px 0px 5px #c1c1c1;
-    outline: none;
 }
 
 .func {
