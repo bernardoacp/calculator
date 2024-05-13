@@ -47,6 +47,7 @@ let displayValue2 = "";
 let operation = "";
 
 let first = true;
+let input = false;
 
 let digitButtons = document.querySelectorAll(".digit");
 
@@ -62,6 +63,7 @@ for (let i = 0; i < digitButtons.length; i++) {
             displayValue2 += ev.target.textContent;
             display.textContent = displayValue2;
         } 
+        input = true;
     });
 }
 
@@ -69,17 +71,26 @@ let operatorButtons = document.querySelectorAll(".operation");
 
 for (let i = 0; i < operatorButtons.length; i++) {
     operatorButtons[i].addEventListener("click", (ev) => {
-        if (first == true) {
+        if (first == true && input == true) {
             operation = ev.target.id;
+            first = false;
         }
-        else {
+        else if (first == false && input == true) {
             displayResult();
             operation = ev.target.id;
         }
-        first = false;
     });
 }
 
 let operateButton = document.querySelector("#equals");
 
 operateButton.addEventListener("click", displayResult);
+
+let clearButton = document.querySelector("#clear");
+clearButton.addEventListener("click", () => {
+    display.textContent = "";
+    displayValue1 = "";
+    displayValue2 = "";
+    operation = "";
+    input = false;
+});
