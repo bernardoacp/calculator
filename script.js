@@ -31,17 +31,19 @@ const operate = function(firstNum, operator, secondNum) {
     }
 }
 
+let result;
 const displayResult = function() {
     if (displayValue1 != "" && displayValue2 != "" && operation != "") {
-        displayValue1 = operate(parseFloat(displayValue1), operation, parseFloat(displayValue2));
-        if (displayValue1 == Infinity) {
+        result = operate(parseFloat(displayValue1), operation, parseFloat(displayValue2));
+        if (result == Infinity) {
             display.textContent = "ERROR";
             displayValue1 = "";
             input = false;
         }
         else {
-            display.textContent = Math.round((displayValue1 + Number.EPSILON) * 10000000) / 10000000;;
+            display.textContent = Math.round((result + Number.EPSILON) * 10000000) / 10000000;;
         }
+        displayValue1 = result.toString();
         operation = "";
         displayValue2 = "";
         first = true;
@@ -60,7 +62,9 @@ let digitButtons = document.querySelectorAll(".digit");
 
 let display = document.querySelector("#display")
 
-for (let i = 0; i < digitButtons.length; i++) {
+let i, j;
+
+for (i = 0; i < digitButtons.length; i++) {
     digitButtons[i].addEventListener("click", (ev) => {
         if (first == true) {
             displayValue1 += ev.target.textContent;
@@ -76,10 +80,10 @@ for (let i = 0; i < digitButtons.length; i++) {
 
 let operatorButtons = document.querySelectorAll(".operation");
 
-for (let i = 0; i < operatorButtons.length; i++) {
+for (i = 0; i < operatorButtons.length; i++) {
     operatorButtons[i].addEventListener("click", (ev) => {
         
-        for (let j = 0; j < operatorButtons.length; j++) {
+        for (j = 0; j < operatorButtons.length; j++) {
             if (operatorButtons[j].classList.contains("button-active")) {
                 operatorButtons[j].classList.toggle("button-active");
             }
