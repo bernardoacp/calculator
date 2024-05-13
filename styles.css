@@ -26,6 +26,7 @@ body {
     margin-right: 9%;
     border-radius: 30px;
     padding-left: 5%;
+    margin-bottom: 5%;
     font-family: 'DS-Digital', sans-serif;
     font-size: 10vh;
     display: flex;
@@ -48,4 +49,11 @@ button {
     padding-bottom: 12%;
     font-size: 4vh;
     border-radius: 15px;
+}
+
+.func {
+    width: 38%;
+    font-size: 3vh;
+    padding-top: 4%;
+    padding-bottom: 11%;
 }
