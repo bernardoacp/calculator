@@ -55,6 +55,18 @@ button {
     border-radius: 15px;
 }
 
+.digit {
+    background-color: #dedede;
+}
+
+#clear {
+    background-color: #aec6cf;
+}
+
+#delete {
+    background-color: #ff6961;
+}
+
 .func {
     width: 38%;
     font-size: 3vh;
