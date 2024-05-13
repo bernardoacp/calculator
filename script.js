@@ -34,19 +34,15 @@ const operate = function(firstNum, operator, secondNum) {
 const displayOperation = function(operateButtons) {
     switch (operateButtons.id) {
         case "add":
-            display.textContent = display.textContent + " " + "+" + " ";
             operation = "+"
             break;
         case "subtract":
-            display.textContent = display.textContent + " " + "-" + " ";
             operation = "-"
             break;
         case "multiply":
-            display.textContent = display.textContent + " " + "*" + " ";
             operation = "*";
             break;
         case "divide":
-            display.textContent = display.textContent + " " + "/" + " ";
             operation = "/";
             break;
     }
@@ -77,11 +73,12 @@ for (let i = 0; i < digitButtons.length; i++) {
     digitButtons[i].addEventListener("click", (ev) => {
         if (first == true) {
             displayValue1 += ev.target.textContent;
+            display.textContent = displayValue1;
         }
         else {
             displayValue2 += ev.target.textContent;
-        }
-        display.textContent += ev.target.textContent; 
+            display.textContent = displayValue2;
+        } 
     });
 }
 
