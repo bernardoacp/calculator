@@ -33,10 +33,20 @@ const operate = function(firstNum, operator, secondNum) {
 
 const displayResult = function() {
     if (displayValue1 != "" && displayValue2 != "" && operation != "") {
-        displayValue1 = operate(parseInt(displayValue1), operation, parseInt(displayValue2));
-        display.textContent = displayValue1;
-        displayValue2 = "";
+        displayValue1 = operate(parseFloat(displayValue1), operation, parseFloat(displayValue2));
+        if (displayValue1 == Infinity) {
+            display.textContent = "ERROR";
+            displayValue1 = "";
+            input = false;
+        }
+        else {
+            displayValue1 = Math.round((displayValue1 + Number.EPSILON) * 100) / 100;
+            display.textContent = displayValue1;
+            displayValue2 = "";
+            operation = "";
+        }
         operation = "";
+        displayValue2 = "";
         first = true;
     }
 }
@@ -83,7 +93,6 @@ for (let i = 0; i < operatorButtons.length; i++) {
 }
 
 let operateButton = document.querySelector("#equals");
-
 operateButton.addEventListener("click", displayResult);
 
 let clearButton = document.querySelector("#clear");
@@ -93,4 +102,16 @@ clearButton.addEventListener("click", () => {
     displayValue2 = "";
     operation = "";
     input = false;
+});
+
+let deleteButton = document.querySelector("#delete")
+deleteButton.addEventListener("click", () => {
+    if (first == true) {
+        displayValue1 = displayValue1.slice(0, -1);
+        display.textContent = displayValue1;
+    }
+    else {
+        displayValue2 = displayValue2.slice(0, -1);
+        display.textContent = displayValue2;
+    }
 });
