@@ -17,6 +17,7 @@ body {
     justify-content: space-around;
     background-color: #d3d3d3;
     padding-top: 10%;
+    outline: 2px solid black;
 }
 
 #display {
@@ -28,10 +29,12 @@ body {
     padding-left: 5%;
     margin-bottom: 5%;
     font-family: 'DS-Digital', sans-serif;
-    font-size: 10vh;
+    font-size: 9vh;
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    outline: 2px solid black;
+    overflow-x: auto;
 }
 
 .line {
@@ -49,6 +52,14 @@ button {
     padding-bottom: 12%;
     font-size: 4vh;
     border-radius: 15px;
+}
+
+button:active, .button-active {
+    background: #e5e5e5;
+    -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+    -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+    box-shadow: inset 0px 0px 5px #c1c1c1;
+    outline: none;
 }
 
 .func {
