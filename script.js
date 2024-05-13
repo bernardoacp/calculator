@@ -82,22 +82,15 @@ let operatorButtons = document.querySelectorAll(".operation");
 
 for (i = 0; i < operatorButtons.length; i++) {
     operatorButtons[i].addEventListener("click", (ev) => {
-        
-        for (j = 0; j < operatorButtons.length; j++) {
-            if (operatorButtons[j].classList.contains("button-active")) {
-                operatorButtons[j].classList.toggle("button-active");
-            }
-        }
-        ev.target.classList.toggle("button-active");
-        
         if (first == true && input == true) {
             operation = ev.target.id;
+            first = false;
         }
         else if (first == false && input == true) {
             displayResult();
             operation = ev.target.id;
+            first = false;
         }
-        first = false;
     });
 }
 
