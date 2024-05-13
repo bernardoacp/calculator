@@ -109,7 +109,7 @@ clearButton.addEventListener("click", () => {
 
 let deleteButton = document.querySelector("#delete")
 deleteButton.addEventListener("click", () => {
-    if (first == true) {
+    if (first == true || displayValue2 == "") {
         displayValue1 = displayValue1.slice(0, -1);
         display.textContent = displayValue1;
     }
