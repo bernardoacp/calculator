@@ -30,3 +30,16 @@ const operate = function(firstNum, operator, secondNum) {
             return divide(firstNum, secondNum);
     }
 }
+
+let displayValue;
+
+let digitButtons = document.querySelectorAll(".digit");
+
+let display = document.querySelector("#display")
+
+for (let i = 0; i < digitButtons.length; i++) {
+    digitButtons[i].addEventListener("click", (ev) => {
+        displayValue = ev.target.textContent;
+        display.textContent = displayValue; 
+    });
+}
